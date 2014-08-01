@@ -1,8 +1,21 @@
 <div class="jumbotron center">
 <h1><FONT FACE='Crimson Text', serif;>Welcome to my app!</FONT></h1>
-	<% if user_signed_in? %>
-			# time1 = Time.new
-			<% else %> 
+	<% if user_signed_in? %> 
+
+<%= $Daylight =  Time.now.hour
+case $Daylight
+when 5 .. 11
+    "Good Morning!"
+when 12 .. 16
+     "Good Afternoon!"
+when 0 .. 4 , 17 .. 24
+     "Good Evening!"
+else
+     "."
+end %>
+
+			
+	<% else %> 
 <p> </p>
 <p> </p>
 <p>
@@ -11,3 +24,4 @@
 </p>
 <% end %>
 </div>
+
